@@ -1,6 +1,7 @@
 #------------------------------------------------
 # Парсинг страниц drom.ru и запись в excel файл
 #------------------------------------------------
+""" Перед стартом парсинга необходимо создать папку data в проекте """
 
 import requests
 from bs4 import BeautifulSoup
@@ -24,7 +25,7 @@ def get_html(url, params=None):
 # Получаем контент одной конкретной страницы 
 def get_content(html):
     soup = BeautifulSoup(html, 'html.parser')
-    items = soup.find_all('a', class_='css-xb5nz8 ewrty961')
+    items = soup.find_all('a', class_='css-xb5nz8 e1huvdhj1')
     cards = []
 
     # Получаем нужный контент из элемента
